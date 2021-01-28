@@ -4,9 +4,9 @@ const app = express();
 
 //check api
 app.get('/check', (req, res) => {
-    res.send('Service 2 running')
+    res.send('dataservice running')
 })
 
 //Port assignment
-const PORT = process.env.PORT || 5002;
+const PORT = process.env.PORT || 5003;
 app.listen(PORT, () => console.log('Server started on: ' + PORT));
