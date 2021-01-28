@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "runall": "node /service1/service1.js"
+    "runall":"concurrently \"npm run service1\" \"npm run service2\"",
+    "service1":"node service1/service1.js",
+    "service2":"node service2/service2.js"
   },
   "repository": {
     "type": "git",
