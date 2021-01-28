@@ -1,1 +1,12 @@
-console.log("Service 2 running!")
+//Express initialization
+const express = require('express');
+const app = express();
+
+//check api
+app.get('/check', (req, res) => {
+    res.send('Service 2 running')
+})
+
+//Port assignment
+const PORT = process.env.PORT || 5002;
+app.listen(PORT, () => console.log('Server started on: ' + PORT));
