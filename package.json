@@ -1,0 +1,23 @@
+{
+  "name": "mtl-microservice-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "runall": "node /service1/service1.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtleonardjr/mtl-microservice-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mtleonardjr/mtl-microservice-template/issues"
+  },
+  "homepage": "https://github.com/mtleonardjr/mtl-microservice-template#readme",
+  "dependencies": {
+    "concurrently": "^5.3.0"
+  }
+}
