@@ -1,6 +1,7 @@
 //Express initialization
 const express = require('express');
 const app = express();
+const logger = require('node-color-log');
 
 //check api
 app.get('/check', (req, res) => {
@@ -9,4 +10,4 @@ app.get('/check', (req, res) => {
 
 //Port assignment
 const PORT = process.env.PORT || 5002;
-app.listen(PORT, () => console.log('Server started on: ' + PORT));
+app.listen(PORT, () => logger.info('Server started on: ' + PORT));

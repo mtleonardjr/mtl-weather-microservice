@@ -1,5 +1,6 @@
 const express = require('express');
 const config = require('./resources/config')
+const logger = require('node-color-log');
 
 const app = express();
 
@@ -11,4 +12,4 @@ app.use('/', require('./routes/route'));
 
 //Port assignment
 const PORT = process.env.PORT || config.port;
-app.listen(PORT, () => console.log('Server started on: ' + PORT));
+app.listen(PORT, () => logger.info('Server started on: ' + PORT));
