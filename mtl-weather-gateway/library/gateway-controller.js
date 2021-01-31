@@ -10,7 +10,15 @@ class Controller {
     processZip(zip) {
         return new Promise ((resolve, reject) => {
             logger.info(serviceName + ": " + name + ': processZip hit. zip code: '+ zip)
-            resolve(zip)
+            zipAdaptor.convertZip(zip).then(
+                (response)=>{
+                    logger.info(serviceName + ": " + name + ': zip converted to: '+ JSON.stringify(response)) 
+                    resolve(response);
+                },
+                (error)=>{
+                    reject(error);
+                }
+            )
         })
     }
 

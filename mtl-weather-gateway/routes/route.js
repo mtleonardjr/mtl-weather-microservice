@@ -25,7 +25,7 @@ router.post('/weather', (req, res) => {
             (response)=> {
                 logger.info(serviceName + ": " + name+': /weather endpoint success')   
                 res.statusCode = 200;
-                res.send({status: "success", msg: '/weather endpoint success ' + response});
+                res.send({status: "success", msg: '/weather endpoint success ', lat:response.lat});
             },
             (err)=> {
                 logger.error(serviceName + ": " + name+': /weather endpoint failure' + err)
