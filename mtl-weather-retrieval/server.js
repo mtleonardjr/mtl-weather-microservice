@@ -9,5 +9,5 @@ app.get('/check', (req, res) => {
 })
 
 //Port assignment
-const PORT = process.env.PORT || 5002;
+const PORT = process.env.PORT || 5004;
 app.listen(PORT, () => logger.info('Server started on: ' + PORT));

@@ -1,5 +1,5 @@
 const config = {
-    "port": "5004",
+    "port": "5003",
     "serviceName": "mtl-weather-gateway"
 }
 

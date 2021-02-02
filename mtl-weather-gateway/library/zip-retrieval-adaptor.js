@@ -12,12 +12,11 @@ class ZipAdaptor {
 
     convertZip(zip) {
         return new Promise ((resolve, reject) => {
-            logger.info(serviceName + ": " + name + ': covertZip hit. zip code: '+ zip)
+            logger.info(serviceName + ": " + name + ': convertZip hit. zip code: '+ zip)
 
-            axios.get("http://localhost:5000/check").then(
+            axios.get("http://localhost:5005/lookup/"+ zip).then(
                 (response)=>{
-                    logger.info(serviceName + ": " + name + ': GET response: ') 
-                    logger.info(response.data) 
+                    logger.info(serviceName + ": " + name + ': convertZip finished')
                     resolve();
                 },
                 (error)=>{
@@ -27,7 +26,8 @@ class ZipAdaptor {
 
             // resolve({"lat":123,"long":123});
             // zipAdaptor.convertZip(zip).then(
-            //     ()=>{},
+            //     ()=>{}                    logger.info(serviceName + ": " + name + ': GET response: '+ response.data) 
+                    // logger.info(response.data) ,
             //     ()=>{}
             // )
         })

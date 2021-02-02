@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "runall": "concurrently \"npm run service1\" \"npm run service2\" \"npm run service3\"",
+    "runall": "concurrently \"npm run service1\" \"npm run service2\" \"npm run service3\" \"npm run service4\"",
     "service1": "node mtl-weather-gateway/server.js",
     "service2": "node mtl-weather-retrieval/server.js",
-    "service3": "node mtl-weather-dataservice/server.js"
+    "service3": "node mtl-weather-dataservice/server.js",
+    "service4": "node mtl-zip-retrieval/server.js"
   },
   "repository": {
     "type": "git",
