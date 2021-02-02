@@ -10,8 +10,7 @@ class Controller {
             logger.info(serviceName + ": " + name + ': Controller hit. zip code: '+ zip)
             axios.get(config.baseURI+zip).then(
                 (response)=>{
-                    logger.info(serviceName + ": " + name + ': GET response: '+ JSON.stringify(response.data)) 
-                    // logger.info(response.data) 
+                    logger.info(serviceName + ": " + name + ': GET response received') 
                     resolve(response.data);
                 },
                 (error)=>{

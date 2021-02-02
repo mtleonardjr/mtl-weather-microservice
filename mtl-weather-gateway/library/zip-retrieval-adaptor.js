@@ -17,7 +17,7 @@ class ZipAdaptor {
             axios.get("http://localhost:5005/lookup/"+ zip).then(
                 (response)=>{
                     logger.info(serviceName + ": " + name + ': convertZip finished')
-                    resolve();
+                    resolve(response.data);
                 },
                 (error)=>{
                     reject(error);

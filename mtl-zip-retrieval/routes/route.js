@@ -25,7 +25,7 @@ router.get("/lookup/:zip", (req, res) => {
             (response)=> {
                 //logger.info(serviceName + ": " + name+': /lookup endpoint finished')
                 if(response !== "" && response !== null){
-                    logger.info(serviceName + ": " + name+': /read endpoint success')   
+                    logger.info(serviceName + ": " + name+': /lookup endpoint success')   
                     res.statusCode = 200;
                     res.send(response); 
                 }else{
