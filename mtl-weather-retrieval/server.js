@@ -1,13 +1,15 @@
-//Express initialization
 const express = require('express');
-const app = express();
+const config = require('./resources/config')
 const logger = require('node-color-log');
 
-//check api
-app.get('/check', (req, res) => {
-    res.send('retrieval running')
-})
+const app = express();
+
+//Init middleware
+app.use(express.json());
+
+//Define Routes
+app.use('/', require('./routes/route'));
 
 //Port assignment
-const PORT = process.env.PORT || 5004;
+const PORT = process.env.PORT || config.port;
 app.listen(PORT, () => logger.info('Server started on: ' + PORT));
