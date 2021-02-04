@@ -3,6 +3,7 @@ const DSAdaptor = require ('./dataservice-adaptor')
 const zipAdaptor = require ('./zip-retrieval-adaptor')
 const weatherAdaptor = require ('./weather-retrieval-adaptor')
 const config = require ('../resources/config')
+const moment = require('moment')
 const serviceName = config.serviceName;
 const name = 'gateway-controller';
 
@@ -15,7 +16,12 @@ class Controller {
                     logger.info(serviceName + ": " + name + ': zip converted to: '+ JSON.stringify(response))
                     weatherAdaptor.getWeather(response).then(
                         (res)=>{
-                            resolve(res)
+                            const week = res.dataseries;
+                            week.map(obj=>{ 
+                                obj.day = moment(obj.date, 'YYYYMMDD').format('dddd') 
+                                obj.date = moment(obj.date, 'YYYYMMDD').format('ll') 
+                            })
+                            resolve(week)
                         },
                         (error)=>{
                             logger.error(serviceName + ": " + name + ': get weather failed') 
