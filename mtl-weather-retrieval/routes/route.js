@@ -14,14 +14,15 @@ router.get('/check', (req, res) => {
 })
 
 //getWeather api
-router.get("/getWeather/", (req, res) => {
+router.get("/getWeather", (req, res) => {
     logger.info(serviceName + ": " + name+': /getWeather endpoint hit')
-    if(req.params.lon === undefined ||req.params.lat === undefined) {
-        logger.error(serviceName + ": " + name+': /getWeather endpoint failure. lat/long data missing')
+    if(req.query.lon === undefined ||req.query.lat === undefined) {
+
+        logger.error(serviceName + ": " + name+': /getWeather endpoint failure. lat/long data missing' + req.query.lon)
         res.statusCode = 500;
         res.send({status: "error", msg: 'lat/long data missing'});
     } else {
-        controller.getWeather(req.params.lon, req.params.lat).then(
+        controller.getWeather(req.query.lon, req.query.lat).then(
             (response)=> {
                 //logger.info(serviceName + ": " + name+': /getWeather endpoint finished')
                 if(response !== "" && response !== null){
