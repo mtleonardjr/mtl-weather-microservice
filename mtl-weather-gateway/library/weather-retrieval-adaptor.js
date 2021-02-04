@@ -16,6 +16,7 @@ class WeatherAdaptor {
                     resolve(response.data);
                 },
                 (error)=>{
+                    logger.info(serviceName + ": " + name + ': getWeather failure')
                     reject(error);
                 }
             )

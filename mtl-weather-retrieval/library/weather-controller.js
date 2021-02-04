@@ -7,11 +7,9 @@ const name = 'weather-controller';
 class Controller {
     getWeather(lon, lat) {
         return new Promise ((resolve, reject) => {
-
             logger.info(serviceName + ": " + name + ': lon: '+ lon + ', lat: ' + lat)
             const product = 'civillight';
             const output = 'json'
-
             axios.get(config.baseURI, { params: { 
                 lon,
                 lat,
@@ -23,6 +21,7 @@ class Controller {
                     resolve(response.data);
                 },
                 (error)=>{
+                    logger.error(serviceName + ": " + name + ': GET failure') 
                     reject(error);
                 }
             )

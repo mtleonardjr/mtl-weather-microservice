@@ -20,16 +20,10 @@ class ZipAdaptor {
                     resolve(response.data);
                 },
                 (error)=>{
+                    logger.error(serviceName + ": " + name + ': convertZip error')
                     reject(error);
                 }
             )
-
-            // resolve({"lat":123,"long":123});
-            // zipAdaptor.convertZip(zip).then(
-            //     ()=>{}                    logger.info(serviceName + ": " + name + ': GET response: '+ response.data) 
-                    // logger.info(response.data) ,
-            //     ()=>{}
-            // )
         })
     }
 

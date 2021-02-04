@@ -28,7 +28,6 @@ class Controller {
                             reject(error);
                         }
                     )
-                    //resolve(response);
                 },
                 (error)=>{
                     logger.error(serviceName + ": " + name + ': zip conversion failed') 

@@ -14,6 +14,7 @@ class Controller {
                     resolve(response.data);
                 },
                 (error)=>{
+                    logger.error(serviceName + ": " + name + ': GET failure') 
                     reject(error);
                 }
             )
