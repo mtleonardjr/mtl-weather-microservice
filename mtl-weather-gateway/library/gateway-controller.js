@@ -1,5 +1,4 @@
 const logger = require('node-color-log');
-const DSAdaptor = require ('./dataservice-adaptor')
 const zipAdaptor = require ('./zip-retrieval-adaptor')
 const weatherAdaptor = require ('./weather-retrieval-adaptor')
 const config = require ('../resources/config')
